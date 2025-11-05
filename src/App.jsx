@@ -1,6 +1,8 @@
 import HeroSection from './components/HeroSection';
 import WhatWeDo from './components/WhatWeDo';
 import ServiceStack from './components/ServiceStack';
+import VisualProof from './components/VisualProof';
+import TeamPhalanx from './components/TeamPhalanx';
 import FooterCTA from './components/FooterCTA';
 
 export default function App() {
@@ -9,6 +11,8 @@ export default function App() {
       <HeroSection />
       <WhatWeDo />
       <ServiceStack />
+      <VisualProof />
+      <TeamPhalanx />
       <FooterCTA />
     </div>
   );
