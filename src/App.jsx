@@ -1,5 +1,5 @@
+import React from 'react';
 import HeroSection from './components/HeroSection';
-import WhatWeDo from './components/WhatWeDo';
 import ServiceStack from './components/ServiceStack';
 import VisualProof from './components/VisualProof';
 import TeamPhalanx from './components/TeamPhalanx';
@@ -7,9 +7,8 @@ import FooterCTA from './components/FooterCTA';
 
 export default function App() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#2D3741', color: '#FFFFFF', fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}>
+    <div className="min-h-screen w-full bg-[#2D3741] text-white antialiased">
       <HeroSection />
-      <WhatWeDo />
       <ServiceStack />
       <VisualProof />
       <TeamPhalanx />

@@ -1,33 +1,46 @@
-import { useEffect } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function FooterCTA() {
-  useEffect(() => {
-    // nothing required; using iframe embed for Calendly for speed
-  }, []);
-
   return (
-    <footer id="calendly" style={{ backgroundColor: '#2D3741' }} className="w-full py-20 md:py-28 text-white">
-      <div className="mx-auto max-w-5xl px-6 md:px-10">
-        <h2 className="text-3xl md:text-4xl font-light">Book the Phalanx</h2>
-        <p className="mt-3 text-white/80">3 slots this month, 1 left. One knock only.</p>
+    <footer id="cta" className="relative w-full bg-[#2D3741] py-20 text-white">
+      <div className="mx-auto max-w-4xl px-6 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-3xl font-semibold sm:text-4xl"
+        >
+          Book a working session
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="mx-auto mt-3 max-w-2xl text-white/80"
+        >
+          One conversation. Clear next steps. Measurable lift.
+        </motion.p>
 
-        {/* Calendly inline embed */}
-        <div className="mt-10 w-full overflow-hidden rounded-xl" style={{ border: '1px solid #FFFFFF' }}>
-          <iframe
-            title="Calendly Scheduling"
-            src="https://calendly.com/luxuryverticalised/strategos?hide_gdpr_banner=1"
-            className="w-full"
-            style={{ minHeight: '720px' }}
-          />
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-8 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3"
+        >
+          <div className="aspect-[16/9] w-full">
+            <iframe
+              title="Calendly"
+              src="https://calendly.com/"
+              className="h-full w-full"
+            />
+          </div>
+        </motion.div>
 
-        <div className="mt-6 text-xs uppercase tracking-widest text-white/60">No second knock. No second slide.</div>
-
-        {/* Minimal footer meta */}
-        <div className="mt-10 flex items-center justify-between text-[10px] text-white/50">
-          <span>Luxury Verticalised — Sold Before the Crane Stops</span>
-          <span>© {new Date().getFullYear()}</span>
-        </div>
+        <p className="mt-6 text-xs text-white/50">© {new Date().getFullYear()} Luxury Verticalised</p>
       </div>
     </footer>
   );
